@@ -2,7 +2,7 @@ export FULL_VESRION="$$(cat ./VERSION)"
 
 .PHONY: build install clean test run
 
-all: build test
+all: build
 
 build:
 	@echo "Making production version ${FULL_VESRION} of Docksbt"
