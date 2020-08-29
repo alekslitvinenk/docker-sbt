@@ -3,7 +3,7 @@ Dockerized SBT for building Scala and Java projects
 
 ## Usage
 
-### Bind-monting project-directory
+### Bind-monting project-directory to alekslitvinenk/sbt
 ```bash
  docker run -v <path to your scala project on host machine>:/scala-project alekslitvinenk/sbt
 ```
