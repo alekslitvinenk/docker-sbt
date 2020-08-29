@@ -1,6 +1,6 @@
 export FULL_VESRION="$$(cat ./VERSION)"
 
-.PHONY: build install clean test run
+.PHONY: build build-local install clean test run
 
 all: build
 
@@ -9,6 +9,10 @@ build:
 	docker build -t alekslitvinenk/sbt:${FULL_VESRION} -t alekslitvinenk/sbt:latest . --no-cache
 	docker push alekslitvinenk/sbt:${FULL_VESRION}
 	docker push alekslitvinenk/sbt:latest
+
+build-local:
+	@echo "Making local version ${FULL_VESRION} of Docksbt"
+	docker build -t alekslitvinenk/sbt:local . --no-cache
 
 install:
 	@echo "Installing Docksbt ${FULL_VESRION}"

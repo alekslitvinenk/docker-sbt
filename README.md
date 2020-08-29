@@ -2,12 +2,24 @@
 Dockerized SBT for building Scala and Java projects
 
 ## Usage
+
+### Bind-monting project-directory
+```bash
+ docker run -v <path to your scala project on host machine>:/scala-project alekslitvinenk/sbt
+```
+
+Optionally, you can bind-mount output directory if you want the artifact to be saved on directory other than <project>/target
+```bash
+-v <path where you want to output build artefacts on host machine>:/target
+```
+
+
+### Deriving from alekslitvinenk/sbt
 1. In the root folder of your Scala project create Dockerfile file the similar content:
 
     ```Dockerfile
     FROM alekslitvinenk/sbt:latest
     COPY . .
-    CMD [ "/bin/bash" ]
     ```
 
 2. Build image:

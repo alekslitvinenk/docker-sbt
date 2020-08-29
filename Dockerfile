@@ -10,4 +10,8 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
   sbt && \
   apk add bash && \
   mkdir -p ${SCALA_PROJECT_ROOT}/target && \
+  ln -s ${SCALA_PROJECT_ROOT} /scala-project && \
   ln -s ${SCALA_PROJECT_ROOT}/target /target
+
+ ENTRYPOINT [ "sbt" ]
+ CMD ["compile"] 
